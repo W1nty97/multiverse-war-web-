@@ -1,0 +1,13 @@
+body {
+  width: 100%;
+  height: 1050px;
+  overflow: hidden;
+}
+.body_default {
+  background-image: linear-gradient(#000, #303030);
+}
+
+@font-face {
+  font-family: monocraft;
+  src: url("../public/fonts/Monocraft.ttc");
+}

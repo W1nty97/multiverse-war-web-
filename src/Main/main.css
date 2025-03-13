@@ -1,0 +1,49 @@
+.main {
+  margin-top: 15px;
+  width: 100%;
+  height: 950px;
+}
+.main__box-btns {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: end;
+}
+@keyframes popupAnimation {
+  0% {
+    border: 2px solid transparent;
+    background-color: transparent;
+  }
+}
+.main__popup-filter {
+  width: 99.7%;
+  height: 300px;
+  margin-top: 4.8%;
+  position: absolute;
+  background-color: #0e0020;
+  border: 2px solid #6300e3;
+  animation: popupAnimation 0.5s;
+}
+.main__btn-filter {
+  width: 3.5%;
+  height: 100%;
+  margin-right: 1%;
+}
+.btn-filter {
+  width: 100%;
+  height: 100%;
+  background-color: #0e0020;
+  color: #32007c;
+  border: 2px solid #32007c;
+  border-radius: 7%;
+  text-align: center;
+  align-content: center;
+}
+.btn-filter:hover {
+  color: #6300e3;
+  border: 2px solid #6300e3;
+}
+.btn-filter:active {
+  color: #32007c;
+  border: 2px solid #32007c;
+}

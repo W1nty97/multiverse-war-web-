@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  background-image: url("../../public/img/background_header.png");
+  border-bottom: 2px solid #32007c;
+}
+.header__box-img {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.header__box-txt {
+  width: 40%;
+  height: 100%;
+}
+.header__text-logo {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  text-align: end;
+  align-content: center;
+  -webkit-text-stroke: 1px #350caf;
+  color: #e0dfdf;
+  text-shadow: 1.5px 0px 0px #4800c4;
+  font-size: 300%;
+  font-family: "monocraft";
+}
+.header__text-logo > span {
+  color: #000000;
+  -webkit-text-stroke: 1px #6600ff;
+  text-shadow: 1.5px 0px 0px #6300e3;
+}
