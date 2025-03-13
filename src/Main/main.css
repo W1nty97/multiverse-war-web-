@@ -2,6 +2,7 @@
   margin-top: 15px;
   width: 100%;
   height: 950px;
+  font-family: "monocraft";
 }
 .main__box-btns {
   width: 100%;
@@ -11,12 +12,13 @@
 }
 @keyframes popupAnimation {
   0% {
-    border: 2px solid transparent;
+    border: 0px solid transparent;
     background-color: transparent;
+    color: transparent;
   }
 }
 .main__popup-filter {
-  width: 99.7%;
+  width: 99.5%;
   height: 300px;
   margin-top: 4.8%;
   position: absolute;
@@ -42,8 +44,38 @@
 .btn-filter:hover {
   color: #6300e3;
   border: 2px solid #6300e3;
+  cursor: pointer;
 }
 .btn-filter:active {
   color: #32007c;
   border: 2px solid #32007c;
+}
+.popup__text-title {
+  width: 100%;
+  height: 15%;
+  border-bottom: 2px solid #6300e3;
+  text-align: center;
+  align-content: center;
+  font-size: 150%;
+  color: #fff;
+  animation: popupAnimation 0.5s;
+  cursor: default;
+}
+.popup__box-content {
+  width: 100%;
+  height: 85%;
+  display: flex;
+}
+.popup__content-filter {
+  width: 20%;
+  height: 100%;
+  border-right: 2px solid #6300e3;
+  animation: popupAnimation 0.5s;
+}
+#img{
+  border: none;
+}
+@font-face {
+  font-family: monocraft;
+  src: url("../../public/fonts/Monocraft.ttc");
 }
