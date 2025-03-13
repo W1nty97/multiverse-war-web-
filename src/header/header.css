@@ -26,9 +26,10 @@
   align-content: center;
   font-size: 300%;
   font-family: "monocraft";
-  color: #000;
-  -webkit-text-stroke: 1px #6f00ff;
-  text-shadow: 2px 0px 0px #5100ba;
+  color: #ffffff;
+  -webkit-text-stroke: 1px #3d3d3d;
+  text-shadow: 2px 0px 0px #626262;
+  cursor: default;
 }
 .header__text-logo {
   width: 40%;
@@ -38,7 +39,7 @@
 }
 .header__text-logo::first-letter,
 .header__text-logo-2::first-letter {
-  color: #6f00ff;
+  color: #000000;
   -webkit-text-stroke: 1px #5100ba;
   text-shadow: 2px 0px 0px #5e00d9;
 }

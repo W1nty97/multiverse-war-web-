@@ -1,5 +1,5 @@
 export default function FilterBtn({ setVisibility, visibility }) {
-  function visibilityFunc() {
+  function visibilityFilter() {
     if (visibility === "none") {
       setVisibility("block");
     } else {
@@ -9,8 +9,8 @@ export default function FilterBtn({ setVisibility, visibility }) {
   return (
     <>
       <div className="main__btn-filter">
-        <div className="btn-filter" onClick={visibilityFunc}>
-          click
+        <div className="btn-filter" onClick={visibilityFilter}>
+          Фильт
         </div>
       </div>
     </>

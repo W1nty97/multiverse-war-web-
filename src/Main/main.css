@@ -15,6 +15,7 @@
     border: 0px solid transparent;
     background-color: transparent;
     color: transparent;
+    opacity: 0;
   }
 }
 .main__popup-filter {
@@ -23,7 +24,7 @@
   margin-top: 4.8%;
   position: absolute;
   background-color: #0e0020;
-  border: 2px solid #6300e3;
+  border: 2px solid #32007c;
   animation: popupAnimation 0.5s;
 }
 .main__btn-filter {
@@ -44,16 +45,17 @@
 .btn-filter:hover {
   color: #6300e3;
   border: 2px solid #6300e3;
-  cursor: pointer;
+  cursor: grab;
 }
 .btn-filter:active {
   color: #32007c;
   border: 2px solid #32007c;
+  cursor: pointer;
 }
 .popup__text-title {
   width: 100%;
   height: 15%;
-  border-bottom: 2px solid #6300e3;
+  border-bottom: 2px solid #32007c;
   text-align: center;
   align-content: center;
   font-size: 150%;
@@ -69,11 +71,24 @@
 .popup__content-filter {
   width: 20%;
   height: 100%;
-  border-right: 2px solid #6300e3;
   animation: popupAnimation 0.5s;
 }
-#img{
+#one,
+#two {
+  border-right: 2px solid #32007c;
+}
+#three,
+#four {
+  border-left: 2px solid #32007c;
+}
+#img {
   border: none;
+  display: flex;
+  justify-content: center;
+}
+#img > img {
+  opacity: 100;
+  animation: popupAnimation 0.5s;
 }
 @font-face {
   font-family: monocraft;
