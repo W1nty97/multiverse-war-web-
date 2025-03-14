@@ -1,0 +1,18 @@
+.content-sel {
+  width: 80%;
+  min-height: 30%;
+  background-color: transparent;
+  border: 2px solid #32007c;
+  color: #32007c;
+  border-radius: 5%;
+  font-family: "monocraft";
+  font-size: 130%;
+  text-align: center;
+  transition: color 0.3s, border 0.3s, font-size 0.3s;
+}
+.content-sel:hover {
+  border: 2px solid #6300e3;
+  color: #ffffff;
+  font-size: 150%;
+}
+

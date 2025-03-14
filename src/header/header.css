@@ -27,7 +27,7 @@
   font-size: 300%;
   font-family: "monocraft";
   color: #ffffff;
-  -webkit-text-stroke: 1px #3d3d3d;
+  -webkit-text-stroke: 1px #5d00ff;
   text-shadow: 2px 0px 0px #626262;
   cursor: default;
 }
@@ -40,6 +40,5 @@
 .header__text-logo::first-letter,
 .header__text-logo-2::first-letter {
   color: #000000;
-  -webkit-text-stroke: 1px #5100ba;
   text-shadow: 2px 0px 0px #5e00d9;
 }

@@ -1,7 +1,7 @@
 import "./main.css";
 import React, { useState } from "react";
-import FilterPopup from "./filter";
-import FilterBtn from "./btnFilter";
+import FilterPopup from "./filterPopup/filter";
+import FilterBtn from "./filterPopup/btnFilter";
 
 export default function Main() {
   const [visibility, setVisibility] = useState("none");
