@@ -74,9 +74,6 @@
 }
 @keyframes popupAnimation {
   0% {
-    border: 0px solid transparent;
-    background-color: transparent;
-    color: transparent;
     opacity: 0;
   }
 }

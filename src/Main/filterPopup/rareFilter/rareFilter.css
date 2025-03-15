@@ -15,45 +15,59 @@
   transform: rotate(-90deg);
   text-align: center;
 }
-.check-block:hover {
+.check-block.active {
   transform: rotate(9deg);
   opacity: 1;
   font-size: 120%;
 }
+.check-block:hover {
+  transform: rotate(9deg);
+  opacity: 1;
+  font-size: 120%;
+  cursor: pointer;
+}
 #cammon {
   border-color: #1e90ff;
   text-shadow: 0px 3px 3px #1767b7;
-}
-#cammon > p {
   color: #1e90ff;
+}
+#cammon.active {
+  color: #fff;
+  background-color: #1e90ff;
 }
 #rare {
   border-color: #ffa500;
   text-shadow: 0px 3px 3px #c48001;
-}
-#rare > p {
   color: #ffa500;
+}
+#rare.active {
+  color: #fff;
+  background-color: #ffa500;
 }
 #epic {
   border-color: #6a0dad;
-  text-shadow: 0px 3px 3px #620e9f;
-}
-#epic > p {
+  text-shadow: 0px 3px 3px #550b8a;
   color: #6a0dad;
+}
+#epic.active {
+  color: #fff;
+  background-color: #6a0dad;
 }
 #legend {
   border-color: #ffd700;
-    text-shadow: 0px 3px 3px #b89d01;
-
-}
-#legend > p {
+  text-shadow: 0px 3px 3px #b89d01;
   color: #ffd700;
+}
+#legend.active {
+  color: #fff;
+  background-color: #ffd700;
 }
 #mythic {
   border-color: #ff4500;
-    text-shadow: 0px 3px 3px #cd3801;
-
-}
-#mythic > p {
+  text-shadow: 0px 3px 3px #a02b01;
   color: #ff4500;
+}
+#mythic.active {
+  color: #fff;
+  background-color: #ff4500;
 }
