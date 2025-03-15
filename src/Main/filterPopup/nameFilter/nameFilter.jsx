@@ -3,7 +3,7 @@ import "./nameFilter.css";
 export default function NameFilter() {
   return (
     <>
-      <div className="popup-content-all">
+      <div className="popup-content-all" >
         <select className="content-sel">
           <option>Все</option>
           <option>W1nty</option>

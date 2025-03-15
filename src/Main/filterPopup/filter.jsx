@@ -1,6 +1,7 @@
 import "./filter.css";
 
-import NameFilter from "./nameFilter/nameFilter"
+import NameFilter from "./nameFilter/nameFilter";
+import RareFilter from "./rareFilter/rareFilter";
 
 export default function FilterPopup({ visibility }) {
   return (
@@ -10,19 +11,17 @@ export default function FilterPopup({ visibility }) {
         <div className="popup__box-content">
           <div className="popup__content" id="one">
             <div className="popup__content-title">Имя</div>
-            <NameFilter/>
+            <NameFilter />
           </div>
           <div className="popup__content" id="two">
-            <div className="popup__content-title">Версия</div>
+            <div className="popup__content-title">Класс</div>
           </div>
           <div className="popup__content" id="btn">
             <div className="popup__content-btn">Поиск</div>
           </div>
           <div className="popup__content" id="three">
-            <div className="popup__content-title">Класс</div>
-          </div>
-          <div className="popup__content" id="four">
             <div className="popup__content-title">Редкость</div>
+            <RareFilter />
           </div>
         </div>
       </div>
