@@ -2,8 +2,14 @@ import "./filter.css";
 
 import NameFilter from "./nameFilter/nameFilter";
 import RareFilter from "./rareFilter/rareFilter";
+import ClassFilter from "./classFilter/classFilter";
 
 export default function FilterPopup({ visibility }) {
+
+  function filter() {
+    
+  }
+
   return (
     <>
       <div className="main__popup-filter" style={{ display: visibility }}>
@@ -15,6 +21,7 @@ export default function FilterPopup({ visibility }) {
           </div>
           <div className="popup__content" id="two">
             <div className="popup__content-title">Класс</div>
+            <ClassFilter />
           </div>
           <div className="popup__content" id="btn">
             <div className="popup__content-btn">Поиск</div>

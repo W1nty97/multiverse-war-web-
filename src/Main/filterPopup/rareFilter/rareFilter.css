@@ -45,13 +45,13 @@
   background-color: #ffa500;
 }
 #epic {
-  border-color: #6a0dad;
+  border-color: #8A2BDA;
   text-shadow: 0px 3px 3px #550b8a;
-  color: #6a0dad;
+  color: #8A2BDA;
 }
 #epic.active {
   color: #fff;
-  background-color: #6a0dad;
+  background-color: #8A2BDA;
 }
 #legend {
   border-color: #ffd700;

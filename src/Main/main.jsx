@@ -13,6 +13,7 @@ export default function Main() {
           <FilterBtn setVisibility={setVisibility} visibility={visibility} />
           <FilterPopup visibility={visibility} />
         </div>
+        <div className="main__box-cards"></div>
       </main>
     </>
   );

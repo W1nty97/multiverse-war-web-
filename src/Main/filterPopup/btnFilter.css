@@ -20,12 +20,11 @@
 .btn-filter:hover {
   color: #6300e3;
   border: 2px solid #6300e3;
-  cursor: grab;
   border-radius: 0% 10%;
+  cursor: pointer;
 }
 .btn-filter:active {
   color: #32007c;
   border-radius: 10% 0%;
   border: 2px solid #32007c;
-  cursor: pointer;
 }
