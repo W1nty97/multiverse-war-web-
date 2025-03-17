@@ -1,8 +1,8 @@
-export default function ClassFilter() {
+export default function ClassFilter({ valueTwo, onChange }) {
   return (
     <>
       <div className="popup-content-all">
-        <select className="content-sel">
+        <select className="content-sel" onChange={onChange} value={valueTwo}>
           <option>Все</option>
           <option>Воин</option>
           <option>Нежить</option>

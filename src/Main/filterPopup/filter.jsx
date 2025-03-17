@@ -7,11 +7,14 @@ import { useContext } from "react";
 
 import { Context } from "../../index.js";
 
-export default function FilterPopup({ visibilityFilter }) {
-  const { data } = useContext(Context);
-  console.log(data);
+export default function FilterPopup({
+  visibilityFilter,
+  valueOne,
+  onChange,
+  valueTwo,
+}) {
+  const data = useContext(Context);
   function filter() {
-    console.log(data);
     // for (let i = 0; i < data.length; i++) {
     //   console.log(data[i])
     // }
@@ -23,11 +26,11 @@ export default function FilterPopup({ visibilityFilter }) {
         <div className="popup__box-content">
           <div className="popup__content" id="one">
             <div className="popup__content-title">Имя</div>
-            <NameFilter />
+            <NameFilter onChange={onChange} valueOne={valueOne} />
           </div>
           <div className="popup__content" id="two">
             <div className="popup__content-title">Класс</div>
-            <ClassFilter />
+            <ClassFilter onChange={onChange} valueOne={valueTwo} />
           </div>
           <div className="popup__content" id="btn">
             <div className="popup__content-btn" onClick={filter}>
