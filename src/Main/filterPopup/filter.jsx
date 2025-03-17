@@ -3,16 +3,22 @@ import "./filter.css";
 import NameFilter from "./nameFilter/nameFilter";
 import RareFilter from "./rareFilter/rareFilter";
 import ClassFilter from "./classFilter/classFilter";
+import { useContext } from "react";
 
-export default function FilterPopup({ visibility }) {
+import { Context } from "../../index.js";
 
+export default function FilterPopup({ visibilityFilter }) {
+  const { data } = useContext(Context);
+  console.log(data);
   function filter() {
-    
+    console.log(data);
+    // for (let i = 0; i < data.length; i++) {
+    //   console.log(data[i])
+    // }
   }
-
   return (
     <>
-      <div className="main__popup-filter" style={{ display: visibility }}>
+      <div className="main__popup-filter" style={{ display: visibilityFilter }}>
         <div className="popup__text-title">Фильтр</div>
         <div className="popup__box-content">
           <div className="popup__content" id="one">
@@ -24,7 +30,9 @@ export default function FilterPopup({ visibility }) {
             <ClassFilter />
           </div>
           <div className="popup__content" id="btn">
-            <div className="popup__content-btn">Поиск</div>
+            <div className="popup__content-btn" onClick={filter}>
+              Поиск
+            </div>
           </div>
           <div className="popup__content" id="three">
             <div className="popup__content-title">Редкость</div>

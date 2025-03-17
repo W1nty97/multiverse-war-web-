@@ -56,8 +56,18 @@
   color: #fff;
   border: 2px solid #6300e3;
   font-size: 170%;
-  text-shadow: 0px 4px 5px #cdcbcb;
   cursor: pointer;
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #8a2bda, 0 0 10px #8a2bda, 0 0 20px #8a2bda,
+      0 0 40px #8a2bda;
+  }
+  100% {
+    text-shadow: 0 0 10px #8a2bda, 0 0 20px #8a2bda, 0 0 40px #8a2bda,
+      0 0 80px #8a2bda;
+  }
 }
 .popup__content-btn:active {
   color: #32007c;

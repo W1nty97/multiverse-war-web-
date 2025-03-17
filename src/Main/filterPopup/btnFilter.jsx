@@ -1,17 +1,17 @@
 import "./btnFilter.css";
 
-export default function FilterBtn({ setVisibility, visibility }) {
-  function visibilityFilter() {
-    if (visibility === "none") {
-      setVisibility("block");
+export default function FilterBtn({ setVisibilityFilter, visibilityFilter }) {
+  function visibility() {
+    if (visibilityFilter === "none") {
+      setVisibilityFilter("block");
     } else {
-      setVisibility("none");
+      setVisibilityFilter("none");
     }
   }
   return (
     <>
       <div className="main__btn-filter">
-        <div className="btn-filter" onClick={visibilityFilter}>
+        <div className="btn-filter" onClick={visibility}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="35"

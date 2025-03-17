@@ -14,5 +14,6 @@
   border: 2px solid #6300e3;
   color: #ffffff;
   font-size: 150%;
+  animation: glow 2s infinite alternate;
 }
 

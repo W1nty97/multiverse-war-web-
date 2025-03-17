@@ -1,9 +1,28 @@
-const data = [
+export const data = [
   {
     id: 0,
-    name: "",
-    version: "",
-        element: "",
-    
+    name: "Барака",
+    version: "Классика",
+    element: "Нет",
+    rare: "Обычная",
+    type: "Воин",
+    strength: 60,
+    health: 48,
+    speed: 34,
+    mind: 20,
+    img:"./imgData/barakaClassic.png",
   },
+  // {
+  //   id: 0,
+  //   name: "",
+  //   version: "",
+  //   element: "",
+  //   rare: "",
+  //   type: "",
+  //   strength: ,
+  //   health:,
+  //   speed:,
+  //   mind:,
+  //   img:"",
+  // },
 ];
