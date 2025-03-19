@@ -23,7 +23,7 @@ export default function NameFilter({ valueOne, onChange }) {
           <option>Смоук</option>
           <option>Тремор</option>
           <option>Уран</option>
-          <option>Вампир</option>
+          <option>Мор</option>
         </select>
       </div>
     </>

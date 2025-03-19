@@ -1,0 +1,159 @@
+:root {
+  --border: #32007c;
+  --color: #ffffff;
+  --opacity: 0.3;
+  --bg-color: #110129;
+}
+.card-class-cammon {
+  width: 18%;
+  height: 60%;
+  margin-top: 1%;
+  border: 2px solid var(--border);
+  border-radius: 5%;
+  background-color: var(--bg-color);
+  transition: border 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+.card-class-cammon:hover {
+  --border: #1e90ff;
+  --color: #1e90ff;
+  --bg-color: #062340;
+}
+.card-class-rare {
+  width: 18%;
+  height: 60%;
+  margin-top: 1%;
+  border: 2px solid var(--border);
+  border-radius: 5%;
+  background-color: var(--bg-color);
+  transition: border 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+.card-class-rare:hover {
+  --border: #ffa500;
+  --color: #ffa500;
+  --bg-color: #392500;
+}
+.card-class-epic {
+  width: 18%;
+  height: 60%;
+  margin-top: 1%;
+  border: 2px solid var(--border);
+  border-radius: 5%;
+  background-color: var(--bg-color);
+  transition: border 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+.card-class-epic:hover {
+  --border: #8a2bda;
+  --color: #8a2bda;
+  --bg-color: #220a36;
+}
+.card-class-legend {
+  width: 18%;
+  height: 60%;
+  margin-top: 1%;
+  border: 2px solid var(--border);
+  border-radius: 5%;
+  background-color: var(--bg-color);
+  transition: border 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+.card-class-legend:hover {
+  --border: #ffd700;
+  --color: #ffd700;
+  --bg-color: #393100;
+}
+.card-class-mythic {
+  width: 18%;
+  height: 60%;
+  margin-top: 1%;
+  border: 2px solid var(--border);
+  border-radius: 5%;
+  background-color: var(--bg-color);
+  transition: border 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+.card-class-mythic:hover {
+  --border: #ff4500;
+  --color: #ff4500;
+  --bg-color: #4b1400;
+}
+.card__box-img {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+.card__box-title {
+  width: 100%;
+  height: 15%;
+  border-bottom: 2px solid var(--border);
+  border-top: 2px solid var(--border);
+  transition: border 0.3s;
+}
+.card-title {
+  width: 100%;
+  height: 60%;
+  margin: 0%;
+  color: #fff;
+  text-align: center;
+  text-align: center;
+  align-content: center;
+  transition: color 0.3s;
+}
+.card-version {
+  width: 100%;
+  height: 30%;
+  margin: 0%;
+  color: var(--color);
+  text-align: center;
+  align-content: center;
+  transition: color 0.3s;
+}
+.card__box-text {
+  width: 100%;
+  height: 23%;
+  color: #fff;
+  transition: color 0.3s;
+}
+.card-type {
+  margin: 0% 0% 0% 2%;
+}
+.card-elem {
+  margin: 0% 0% 0% 2%;
+}
+.card-rare {
+  margin: 0% 0% 0% 2%;
+}
+.card__box-indicators {
+  width: 100%;
+  height: 11%;
+  border-top: 2px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  transition: border 0.3s;
+}
+.card-indicator {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  font-size: 150%;
+  transition: border 0.3s;
+}
+#strength {
+  color: #0033ff;
+  border-right: 2px solid var(--border);
+}
+#health {
+  color: #ff0000;
+  border-right: 2px solid var(--border);
+}
+#speed {
+  color: #00be00;
+  border-right: 2px solid var(--border);
+}
+#mind {
+  color: #ffdd00;
+}

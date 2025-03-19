@@ -3,7 +3,7 @@
   height: 300px;
   margin-top: 4.5%;
   position: absolute;
-  background-color: #0e0020;
+  background-color: #000000;
   border: 2px solid #32007c;
   animation: popupAnimation 0.5s;
 }
