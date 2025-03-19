@@ -1,9 +1,14 @@
 import "./rareFilter.css";
 
-export default function RareFilter({ check, id, textContent }) {
+export default function RareFilter({ onClick, id, textContent, isActive, }) {
+
   return (
     <>
-      <div className="check-block active" id={id} onClick={check}>
+      <div
+        className={isActive ? "check-block active" : "check-block"}
+        id={id}
+        onClick={onClick}
+      >
         <p>{textContent}</p>
       </div>
     </>

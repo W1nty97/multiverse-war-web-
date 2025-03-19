@@ -1,5 +1,4 @@
 import "./filter.css";
-
 import NameFilter from "./nameFilter/nameFilter";
 import RareFilter from "./rareFilter/rareFilter";
 import ClassFilter from "./classFilter/classFilter";
@@ -10,6 +9,8 @@ export default function FilterPopup({
   valueTwo,
   setValueOne,
   setValueTwo,
+  clickButton,
+  setClickButton,
 }) {
   const handleChangeOne = (valueOne) => {
     setValueOne(valueOne.target.value);
@@ -18,13 +19,23 @@ export default function FilterPopup({
     setValueTwo(valueTwo.target.value);
   };
 
-  function check(event) {
-    if (event.currentTarget.className === "check-block active") {
-      event.currentTarget.classList.remove("active");
+  //const handleClick = (clickButton) => {
+  //  setClickButton((prevClickButton) => {
+  //    if (prevClickButton === clickButton) {
+  //      return null;
+  //    } else {
+  //      return clickButton;
+  //    }
+  //  });
+  //};
+
+  const handleClick = (filter) => {
+    if (clickButton.includes(filter)) {
+      setClickButton(clickButton.filter((f) => f !== filter));
     } else {
-      event.currentTarget.classList.add("active");
+      setClickButton([...clickButton, filter]);
     }
-  }
+  };
 
   return (
     <>
@@ -45,11 +56,36 @@ export default function FilterPopup({
           <div className="popup__content" id="three">
             <div className="popup__content-title">Редкость</div>
             <div className="popup-content-all">
-              <RareFilter id="cammon" textContent="Обычная" check={check} />
-              <RareFilter id="rare" textContent="Редкая" check={check} />
-              <RareFilter id="epic" textContent="Эпическая" check={check} />
-              <RareFilter id="legend" textContent="Легендарная" check={check} />
-              <RareFilter id="mythic" textContent="Мифическая" check={check} />
+              <RareFilter
+                id="cammon"
+                textContent="Обычная"
+                isActive={clickButton.includes("Обычная")}
+                onClick={() => handleClick("Обычная")}
+              />
+              <RareFilter
+                id="rare"
+                textContent="Редкая"
+                isActive={clickButton.includes("Редкая")}
+                onClick={() => handleClick("Редкая")}
+              />
+              <RareFilter
+                id="epic"
+                textContent="Эпическая"
+                isActive={clickButton.includes("Эпическая")}
+                onClick={() => handleClick("Эпическая")}
+              />
+              <RareFilter
+                id="legend"
+                textContent="Легендарная"
+                isActive={clickButton.includes("Легендарная")}
+                onClick={() => handleClick("Легендарная")}
+              />
+              <RareFilter
+                id="mythic"
+                textContent="Мифическая"
+                isActive={clickButton.includes("Мифическая")}
+                onClick={() => handleClick("Мифическая")}
+              />
             </div>
           </div>
         </div>
