@@ -8,6 +8,7 @@ export default function ClassFilter({ valueTwo, onChange }) {
           <option>Нежить</option>
           <option>Маг</option>
           <option>Божество</option>
+          <option>Кибер</option>
         </select>
       </div>
     </>

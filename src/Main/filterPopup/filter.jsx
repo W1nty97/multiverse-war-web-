@@ -12,22 +12,13 @@ export default function FilterPopup({
   clickButton,
   setClickButton,
 }) {
+  
   const handleChangeOne = (valueOne) => {
     setValueOne(valueOne.target.value);
   };
   const handleChangeTwo = (valueTwo) => {
     setValueTwo(valueTwo.target.value);
   };
-
-  //const handleClick = (clickButton) => {
-  //  setClickButton((prevClickButton) => {
-  //    if (prevClickButton === clickButton) {
-  //      return null;
-  //    } else {
-  //      return clickButton;
-  //    }
-  //  });
-  //};
 
   const handleClick = (filter) => {
     if (clickButton.includes(filter)) {
@@ -51,7 +42,7 @@ export default function FilterPopup({
             <ClassFilter onChange={handleChangeTwo} valueTwo={valueTwo} />
           </div>
           <div className="popup__content" id="btn">
-            <div className="popup__content-btn">Поиск</div>
+            
           </div>
           <div className="popup__content" id="three">
             <div className="popup__content-title">Редкость</div>
