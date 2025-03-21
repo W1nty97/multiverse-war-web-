@@ -5,6 +5,7 @@
   position: absolute;
   background-color: #000000;
   border: 2px solid #32007c;
+  z-index: 1;
   animation: popupAnimation 0.5s;
 }
 .popup__text-title {
