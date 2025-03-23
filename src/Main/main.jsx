@@ -3,6 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 import FilterPopup from "./filterPopup/filter";
 import FilterBtn from "./filterPopup/btnFilter";
 import Card from "./card.jsx";
+import CollectionBtn from "./collecton/collection.jsx";
 
 import { Context } from "../index.js";
 
@@ -51,6 +52,7 @@ export default function Main() {
             setVisibilityFilter={setVisibilityFilter}
             visibilityFilter={visibilityFilter}
           />
+          <CollectionBtn />
           <FilterPopup
             visibilityFilter={visibilityFilter}
             valueOne={valueOne}
