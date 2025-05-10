@@ -1,0 +1,31 @@
+.popup__btn-register {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #ffffff;
+  font-family: "monocraft";
+}
+.reg_txt-btn {
+  color: #7b00ff;
+  cursor: pointer;
+}
+.reg_txt-btn::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1%;
+  background-color: #7b00ff;
+  margin-top: 5px;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+.reg_txt-btn:hover::after {
+  transform: scale(1);
+}
+.reg_text-content {
+  padding-right: 1%;
+    cursor: default;
+
+}

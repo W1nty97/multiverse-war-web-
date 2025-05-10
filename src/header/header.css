@@ -13,10 +13,10 @@
   justify-content: center;
 }
 .header__box-txt {
-  width: 70%;
+  width: 72%;
   height: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 .header__text-logo,
 .header__text-logo-2 {
@@ -41,4 +41,11 @@
 .header__text-logo-2::first-letter {
   color: #000000;
   text-shadow: 2px 0px 0px #5e00d9;
+}
+.header__box-btn{
+  display: flex;
+  width: 18%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }

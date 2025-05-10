@@ -1,0 +1,24 @@
+.btnSign {
+  width: 50%;
+  height: 70%;
+  background-color: #160036;
+  border: 2px solid #32007c;
+  border-radius: 3%;
+  color: #626262;
+  font-family: "monocraft";
+  font-size: 130%;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s, font-size 0.3s, border 0.3s, text-shadow 0.3s;
+}
+.btnSign:hover {
+  color: #fff;
+  border: 2px solid #6300e3;
+  font-size: 150%;
+  text-shadow: 3px 0px 0px #6300e3;
+}
+.btnSign:active {
+  color: #626262;
+  border: 2px solid #32007c;
+}

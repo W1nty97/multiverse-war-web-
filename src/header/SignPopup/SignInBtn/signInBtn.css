@@ -1,0 +1,27 @@
+.box_signInBtn {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signInBtn {
+  width: 20%;
+  height: 40%;
+  color: #626262;
+  text-align: center;
+  align-content: center;
+  font-family: "monocraft";
+  background-color: #160036;
+  border: 2px solid #32007c;
+  font-size: 130%;
+  border-radius: 3%;
+  cursor: pointer;
+  transition: color 0.3s, font-size 0.3s, border 0.3s, text-shadow 0.3s;
+}
+.signInBtn:hover {
+  color: #fff;
+  border: 2px solid #6300e3;
+  font-size: 150%;
+  text-shadow: 3px 0px 0px #6300e3;
+}

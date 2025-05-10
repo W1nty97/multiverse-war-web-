@@ -3,17 +3,17 @@
   min-height: 30%;
   background-color: transparent;
   border: 2px solid #32007c;
-  color: #32007c;
+  color: #626262;
   border-radius: 5%;
   font-family: "monocraft";
   font-size: 130%;
   text-align: center;
-  transition: color 0.3s, border 0.3s, font-size 0.3s;
+  transition: color 0.3s, border 0.3s, font-size 0.3s, text-shadow 0.3s;
 }
 .content-sel:hover {
   border: 2px solid #6300e3;
+  text-shadow: 3px 0px 0px #6300e3;
   color: #ffffff;
   font-size: 150%;
-  animation: glow 2s infinite alternate;
 }
 
