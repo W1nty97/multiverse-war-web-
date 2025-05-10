@@ -1,20 +1,6 @@
 import "../../inputs.css";
-import { valid_pass_two } from "../../usersAPI";
 
-
-export default function PassInputRegTwo({ passValueThree, setPassValueThree, passValueTwo }) {
-  // Функция для обработки изменения значения в поле ввода пароля
-  function handlePassValueThree(e) {
-    setPassValueThree(e.target.value);
-    if (valid_pass_two(e.target.value, passValueTwo)) {
-      e.target.classList.remove("unCorrect");
-      e.target.classList.add("сorrect");
-    } else {
-      e.target.classList.add("unCorrect");
-      e.target.classList.remove("сorrect");
-    }
-  }
-
+export default function PassInputRegTwo({ state, handler }) {
   return (
     <>
       <div className="box__pass-content two">
@@ -23,9 +9,9 @@ export default function PassInputRegTwo({ passValueThree, setPassValueThree, pas
           <input
             type="password"
             placeholder="Повторите пароль"
-            className="content-input"
-            value={passValueThree}
-            onInput={handlePassValueThree}
+            className={`content-input ${(state.passConfirmed && state.passValid) ? "correct" : "unCorrent"}`}
+            value={state.confirmPass}
+            onInput={handler}
           />
         </div>
       </div>
