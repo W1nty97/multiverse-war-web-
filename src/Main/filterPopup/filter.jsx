@@ -1,45 +1,51 @@
 import "./filter.css";
+import { useContext, useEffect, useState } from "react";
 import NameFilter from "./nameFilter/nameFilter";
 import RareFilter from "./rareFilter/rareFilter";
 import ClassFilter from "./classFilter/classFilter";
+import { Context } from "../../index.js";
+
+const rareIds = {
+  Обычная: "cammon",
+  Редкая: "rare",
+  Эпическая: "epic",
+  Легендарная: "legend",
+  Мифическая: "mythic"
+};
+
+function switchValue(list, value) {
+  return list.includes(value)
+    ? list.filter((f) => f !== value)
+    : [...list, value];
+}
 
 export default function FilterPopup({
-  visibilityFilter,
-  valueOne,
-  valueTwo,
-  setValueOne,
-  setValueTwo,
-  clickButton,
-  setClickButton,
+  display,
+  filter,
+  onChange
 }) {
-  
-  const handleChangeOne = (valueOne) => {
-    setValueOne(valueOne.target.value);
-  };
-  const handleChangeTwo = (valueTwo) => {
-    setValueTwo(valueTwo.target.value);
-  };
+  const { rareness } = useContext(Context);
 
-  const handleClick = (filter) => {
-    if (clickButton.includes(filter)) {
-      setClickButton(clickButton.filter((f) => f !== filter));
-    } else {
-      setClickButton([...clickButton, filter]);
-    }
-  };
+  const [state, setState] = useState(filter);
+
+  useEffect(() => onChange(state));
 
   return (
     <>
-      <div className="main__popup-filter" style={{ display: visibilityFilter }}>
+      <div className="main__popup-filter" style={{ display: display }}>
         <div className="popup__text-title">Фильтр</div>
         <div className="popup__box-content">
           <div className="popup__content" id="one">
             <div className="popup__content-title">Имя</div>
-            <NameFilter onChange={handleChangeOne} valueOne={valueOne} />
+            <NameFilter 
+              onChange={e => setState({...state, name: e.target.value})}
+              value={state.name} />
           </div>
           <div className="popup__content" id="two">
             <div className="popup__content-title">Класс</div>
-            <ClassFilter onChange={handleChangeTwo} valueTwo={valueTwo} />
+            <ClassFilter 
+              onChange={e => setState({...state, kind: e.target.value})}
+              value={filter.kind} />
           </div>
           <div className="popup__content" id="btn">
             
@@ -47,36 +53,17 @@ export default function FilterPopup({
           <div className="popup__content" id="three">
             <div className="popup__content-title">Редкость</div>
             <div className="popup-content-all">
-              <RareFilter
-                id="cammon"
-                textContent="Обычная"
-                isActive={clickButton.includes("Обычная")}
-                onClick={() => handleClick("Обычная")}
-              />
-              <RareFilter
-                id="rare"
-                textContent="Редкая"
-                isActive={clickButton.includes("Редкая")}
-                onClick={() => handleClick("Редкая")}
-              />
-              <RareFilter
-                id="epic"
-                textContent="Эпическая"
-                isActive={clickButton.includes("Эпическая")}
-                onClick={() => handleClick("Эпическая")}
-              />
-              <RareFilter
-                id="legend"
-                textContent="Легендарная"
-                isActive={clickButton.includes("Легендарная")}
-                onClick={() => handleClick("Легендарная")}
-              />
-              <RareFilter
-                id="mythic"
-                textContent="Мифическая"
-                isActive={clickButton.includes("Мифическая")}
-                onClick={() => handleClick("Мифическая")}
-              />
+              {Object.entries(rareness).map(
+                ([name, _]) => 
+                  <RareFilter
+                    key={name}
+                    id={rareIds[name]}
+                    textContent={name}
+                    isActive={state.rare.includes(name)}
+                    onClick={e => setState({...state, rare: switchValue(state.rare, name)
+                    })}
+                  />
+              )}
             </div>
           </div>
         </div>

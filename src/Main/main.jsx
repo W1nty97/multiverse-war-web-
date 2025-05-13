@@ -1,70 +1,53 @@
 import "./main.css";
-import React, { useState, useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import FilterPopup from "./filterPopup/filter";
 import FilterBtn from "./filterPopup/btnFilter";
 import Card from "./card.jsx";
 
 import { Context } from "../index.js";
 
+// Фильтрует данные
+function filterData(filter, data) {
+  if (filter.name !== "Все") {
+    data = data.filter((e) => e.name === filter.name);
+  }
+  if (filter.kind !== "Все") {
+    data = data.filter((e) => e.type === filter.kind);
+  }
+  if (filter.rare.length !== 0) {
+    data = data.filter((e) => filter.rare.includes(e.rare));
+  }
+
+  return data;
+}
+
 export default function Main() {
-  const data = useContext(Context);
+  const { data } = useContext(Context);
 
-  const [visibilityFilter, setVisibilityFilter] = useState("none");
-  const [valueOne, setValueOne] = useState("Все");
-  const [valueTwo, setValueTwo] = useState("Все");
-  const [filterList, setFilterList] = useState([data]);
-  const [clickButton, setClickButton] = useState([]);
-
-  const rarityOrder = {
-    Обычная: 1,
-    Редкая: 2,
-    Эпическая: 3,
-    Легендарная: 4,
-    Мифическая: 5,
-  };
-
-  data.sort((a, b) => {
-    return rarityOrder[a.rare] - rarityOrder[b.rare];
-  });
-
-  useEffect(() => {
-    let filterList = data;
-    if (valueOne !== "Все") {
-      filterList = filterList.filter((element) => element.name === valueOne);
-    }
-    if (valueTwo !== "Все") {
-      filterList = filterList.filter((element) => element.type === valueTwo);
-    }
-    if (clickButton.length !== 0) {
-      filterList = filterList.filter((element) =>
-        clickButton.includes(element.rare)
-      );
-    }
-    setFilterList(filterList);
-  }, [valueOne, valueTwo, clickButton, data]);
+  const [display, setDisplay] = useState("none");
+  const [filter, setFilter] = useState({
+      name: "Все",
+      kind: "Все",
+      rare: []
+    });
 
   return (
     <>
       <main className="main">
         <div className="main__box-btns">
-          <FilterBtn
-            setVisibilityFilter={setVisibilityFilter}
-            visibilityFilter={visibilityFilter}
+          <FilterBtn 
+            onClick={_ => setDisplay(display === "none" ? "block" : "none")} 
           />
           <FilterPopup
-            visibilityFilter={visibilityFilter}
-            valueOne={valueOne}
-            valueTwo={valueTwo}
-            setValueOne={setValueOne}
-            setValueTwo={setValueTwo}
-            clickButton={clickButton}
-            setClickButton={setClickButton}
+            display={display}
+            filter={filter}
+            onChange={setFilter}
           />
         </div>
         <div className="main__box-cards">
-          {filterList.map((element, id) => (
+          {filterData(filter, data).map((element, id) => 
             <Card key={id} element={element} />
-          ))}
+          )}
         </div>
       </main>
     </>
