@@ -51,11 +51,11 @@
 .content-input:hover::placeholder {
   color: #989898;
 }
-.unCorrect {
-  color: #b90000;
+.correct {
+  color: #00b900;
   font-family: "monocraft";
 }
-.сorrect {
-  color: #00b900;
+.unCorrect {
+  color: #b90000;
   font-family: "monocraft";
 }

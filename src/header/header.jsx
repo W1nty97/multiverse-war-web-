@@ -2,7 +2,7 @@ import "./header.css";
 import PopupSign from "./SignPopup/popupSign";
 import BtnSign from "./SignPopup/btnSign";
 import PopupReg from "./RegisterPopup/popupReg";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function Header() {
   const [visibilitySign, setVisibilitySign] = useState("hidden");

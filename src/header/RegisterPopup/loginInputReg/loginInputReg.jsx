@@ -12,9 +12,12 @@ export default function LoginInputReg({ state, handler }) {
             placeholder="Введите логин"
             maxLength={20}
             minLength={8}
-            className={`content-input ${state.loginValid ? 'correct' : 'unCorrect'}`}
+            className={`content-input ${
+              state.loginValid ? "correct" : "unCorrect"
+            }`}
             value={state.login}
-            onInput={handler}/>
+            onInput={handler}
+          />
         </div>
       </div>
     </>

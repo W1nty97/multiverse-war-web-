@@ -1,13 +1,45 @@
-.register__popup-box{
-    width: 100%;
-    height: 40%;
-    background-color: aqua;
+.register__popup-box {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.verification{
-   width: 100%;
-   height: 25%;
-   text-align: center;
-   align-content: center;
-   font-family: 'monocraft';
-   font-size: 130%;
+.verification:disabled {
+  width: 20%;
+  height: 40%;
+  color: #6d0000e8;
+  text-align: center;
+  align-content: center;
+  font-family: "monocraft";
+  background-color: #160036;
+  border: 2px solid #6d0000e8;
+  font-size: 130%;
+  border-radius: 3%;
+  cursor: pointer;
+  transition: color 0.3s, font-size 0.3s, border 0.3s, text-shadow 0.3s;
+}
+.verification:disabled:hover {
+  color: #6d0000e8;
+  border: 2px solid #6d0000e8;
+  font-size: 130%;
+}
+.verification {
+  width: 20%;
+  height: 40%;
+  color: #007100;
+  text-align: center;
+  align-content: center;
+  font-family: "monocraft";
+  background-color: #160036;
+  border: 2px solid #007100;
+  font-size: 130%;
+  border-radius: 3%;
+  cursor: pointer;
+  transition: color 0.3s, font-size 0.3s, border 0.3s, text-shadow 0.3s;
+}
+.verification:hover {
+  color: #00b900;
+  border: 2px solid #00b900;
+  font-size: 150%;
 }

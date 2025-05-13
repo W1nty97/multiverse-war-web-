@@ -9,7 +9,7 @@ export default function PassInputReg({ state, handler }) {
           <input
             type="password"
             placeholder="Введите пароль"
-            className={`content-input ${state.passValid ? 'correct' : 'content-input unCorrect'}`}
+            className={`content-input ${state.passValid ? 'correct' : 'unCorrect'}`}
             value={state.pass}
             onInput={handler}
           />

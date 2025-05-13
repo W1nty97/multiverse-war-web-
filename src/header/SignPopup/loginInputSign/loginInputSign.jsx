@@ -1,10 +1,6 @@
 import "../../inputs.css";
 
-export default function LoginInputSign({ loginValueOne, setLoginValueOne }) {
-  // Функция для обработки изменения значения в поле ввода логина
-  function handleLoginValueOne(e) {
-    setLoginValueOne(e.target.value);
-  }
+export default function LoginInputSign({state, handler}) {
 
   return (
     <>
@@ -15,8 +11,8 @@ export default function LoginInputSign({ loginValueOne, setLoginValueOne }) {
             type="email"
             placeholder="Ваш логин"
             className="content-input"
-            value={loginValueOne}
-            onInput={handleLoginValueOne}
+            value={state.login}
+            onInput={handler}
           />
         </div>
       </div>

@@ -1,11 +1,7 @@
 import "../../inputs.css";
 
-export default function PassInput({ passValueOne, setPassValueOne }) {
-  // Функция для обработки изменения значения в поле ввода пароля
-  function handlePassValueOne(e) {
-    setPassValueOne(e.target.value);
-  }
-  
+export default function PassInput(state, handler) {
+
   return (
     <>
       <div className="box__pass-content">
@@ -15,8 +11,8 @@ export default function PassInput({ passValueOne, setPassValueOne }) {
             type="password"
             placeholder="Ваш пароль"
             className="content-input"
-            value={passValueOne}
-            onInput={handlePassValueOne}
+            value={state.pass}
+            onInput={handler}
           />
         </div>
       </div>

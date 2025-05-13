@@ -9,7 +9,7 @@ export default function PassInputRegTwo({ state, handler }) {
           <input
             type="password"
             placeholder="Повторите пароль"
-            className={`content-input ${(state.passConfirmed && state.passValid) ? "correct" : "unCorrent"}`}
+            className={`content-input ${(state.passConfirmed && state.passValid) ? "correct" : "unCorrect"}`}
             value={state.confirmPass}
             onInput={handler}
           />
