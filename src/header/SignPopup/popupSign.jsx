@@ -49,10 +49,10 @@ export default function PopupSign({
   const [state, dispatch] = useReducer(reducer, initState); // создаем состояние
 
   // просто скрывает форму
-  function hideForm() {
+  function hideSignForm() {
     setVisibilitySign("hidden");
   }
-  function showForm() {
+  function showRegForm() {
     setVisibilityReg("visible");
   }
 
@@ -70,8 +70,8 @@ export default function PopupSign({
   }
 
   function handleRegisterOpenClicked() {
-    hideForm(); // скрываем форму входа
-    showForm(); // открываем форму регистрации
+    hideSignForm(); // скрываем форму входа
+    showRegForm(); // открываем форму регистрации
   }
 
   return (
@@ -88,7 +88,7 @@ export default function PopupSign({
                 fill="currentColor"
                 class="bi-x-circle-fill"
                 viewBox="0 0 16 16"
-                onClick={hideForm}
+                onClick={hideSignForm}
               >
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
               </svg>
@@ -98,7 +98,7 @@ export default function PopupSign({
             <LoginInputSign state={state} handler={handleLoginInput} />
             <PassInputSign state={state} handler={handlePassInput} />
             <BtnRegisterOpen handler={handleRegisterOpenClicked} />
-            <SignInBtn state={state} handler={hideForm} />
+            <SignInBtn state={state} handler={hideSignForm} />
           </div>
         </div>
       </div>
