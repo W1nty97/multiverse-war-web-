@@ -1,10 +1,10 @@
 import "./nameFilter.css";
 
-export default function NameFilter({ valueOne, onChange }) {
+export default function NameFilter({ value, onChange }) {
   return (
     <>
       <div className="popup-content-all">
-        <select className="content-sel" onChange={onChange} value={valueOne}>
+        <select className="content-sel" onChange={onChange} value={value}>
           <option>Все</option>
           <option>W1nty</option>
           <option>Барака</option>
