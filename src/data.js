@@ -1,3 +1,12 @@
+export const rareness = Object.fromEntries(
+  new Map([ 
+    ["Обычная", 1],
+    ["Редкая", 2],
+    ["Эпическая", 3],
+    ["Легендарная", 4],
+    ["Мифическая", 5],
+]));
+
 export const data = [
   {
     id: 0,
