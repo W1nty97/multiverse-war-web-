@@ -1,47 +1,28 @@
 import "./main.css";
 import { useContext, useState } from "react";
-import FilterPopup from "./filterPopup/filter";
+import FilterPopup, { filterData, defaultFilter } from "./filterPopup/filter";
 import FilterBtn from "./filterPopup/btnFilter";
 import Card from "./card.jsx";
 
 import { Context } from "../index.js";
 
-// Фильтрует данные
-function filterData(filter, data) {
-  if (filter.name !== "Все") {
-    data = data.filter((e) => e.name === filter.name);
-  }
-  if (filter.kind !== "Все") {
-    data = data.filter((e) => e.type === filter.kind);
-  }
-  if (filter.rare.length !== 0) {
-    data = data.filter((e) => filter.rare.includes(e.rare));
-  }
-
-  return data;
-}
-
 export default function Main() {
   const { data } = useContext(Context);
 
-  const [display, setDisplay] = useState("none");
-  const [filter, setFilter] = useState({
-      name: "Все",
-      kind: "Все",
-      rare: []
-    });
+  const [displayFilter, setDisplayFilter] = useState("none");
+  const [filter, setFilter] = useState(defaultFilter);
 
   return (
     <>
       <main className="main">
         <div className="main__box-btns">
           <FilterBtn 
-            onClick={_ => setDisplay(display === "none" ? "block" : "none")} 
+            onClick={_ => setDisplayFilter(displayFilter === "none" ? "block" : "none")} 
           />
           <FilterPopup
-            display={display}
+            display={displayFilter}
             filter={filter}
-            onChange={setFilter}
+            onChange={(newFilter) => setFilter(newFilter)}
           />
         </div>
         <div className="main__box-cards">

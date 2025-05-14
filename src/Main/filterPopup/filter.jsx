@@ -19,6 +19,26 @@ function switchValue(list, value) {
     : [...list, value];
 }
 
+export let defaultFilter = {
+  name: "",
+  kind: "",
+  rare: []
+}
+
+// Фильтрует данные
+export function filterData(filter, data) {
+  if (filter.name !== "Все") {
+    data = data.filter((e) => e.name === filter.name);
+  }
+  if (filter.kind !== "Все") {
+    data = data.filter((e) => e.type === filter.kind);
+  }
+  if (filter.rare.length !== 0) {
+    data = data.filter((e) => filter.rare.includes(e.rare));
+  }
+  return data;
+}
+
 export default function FilterPopup({
   display,
   filter,
