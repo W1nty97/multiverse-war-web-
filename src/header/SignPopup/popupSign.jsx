@@ -1,9 +1,9 @@
 import "../popup.css";
 import { useReducer } from "react";
-import LoginInputSign from "./loginInputSign/loginInputSign";
-import PassInputSign from "./passInputSign/passInputSign";
-import BtnRegisterOpen from "./btnRegisterOpen";
-import SignInBtn from "./SignInBtn/signInBtn";
+import LoginInputSign from "./loginInputSign/loginInputSign.jsx";
+import PassInputSign from "./passInputSign/passInputSign.jsx";
+import BtnRegisterOpen from "./btnRegisterOpen.jsx";
+import SignInBtn from "./SignInBtn/signInBtn.jsx";
 
 const initState = {
   login: "", // логин

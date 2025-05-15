@@ -1,7 +1,7 @@
 import "./header.css";
-import PopupSign from "./SignPopup/popupSign";
-import BtnSign from "./SignPopup/btnSign";
-import PopupReg from "./RegisterPopup/popupReg";
+import PopupSign from "./SignPopup/popupSign.jsx";
+import BtnSign from "./SignPopup/btnSign.jsx";
+import PopupReg from "./RegisterPopup/popupReg.jsx";
 import { useState } from "react";
 
 export default function Header() {

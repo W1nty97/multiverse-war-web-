@@ -1,7 +1,7 @@
 import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import App from "./App.js";
 import { rareness, data } from "./data.js";
 
 export const Context = createContext(null);

@@ -1,5 +1,7 @@
+// import { Client } from "pg";
+
 export function valid_login(login) {
-  return (
+  return (  
     !/\s/.test(login) &&
     login.length >= 8 &&
     login.length <= 64 &&
@@ -14,6 +16,14 @@ export function valid_pass(pass) {
     !/[а-яА-ЯёЁ]/.test(pass)
   );
 }
-export function valid_pass_two(pass, passTwo) {
-  return pass === passTwo;
-}
+
+// const client = new Client({
+//   user: "postgres",
+//   password: "postgres",
+//   host: "localhost",
+//   port: 5432,
+//   database: "postgres",
+// });
+
+// await client.connect();
+// await client.query("BEGIN"); // начинаем транзакцию
