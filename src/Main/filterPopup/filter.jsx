@@ -20,8 +20,8 @@ function switchValue(list, value) {
 }
 
 export let defaultFilter = {
-  name: "",
-  kind: "",
+  name: "Все",
+  kind: "Все",
   rare: []
 }
 
