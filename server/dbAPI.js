@@ -1,12 +1,5 @@
 import { Pool } from "pg";
-
-const dbConfig = {
-  user: "postgres",
-  password: "postgres",
-  host: "localhost",
-  port: 5432,
-  database: "postgres",
-};
+import { dbConfig } from "../credentials.js"
 
 const pool = new Pool(dbConfig);
 
@@ -28,7 +21,7 @@ const getAllUsers = async () => {
   }
 };
 
-const getAllCharacters = async () => {
+export const getAllCharacters = async () => {
   const client = await pool.connect();
   try {
     const res =
