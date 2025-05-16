@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { data } from '../src/data.js';
+import { getAllCharacters } from './dbAPI.js'; // Импортируем функцию getAllCharacters из db.js
 
 const app = express();
 app.use(cors());
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // Каждая точка получает данные запроса в req, а данные ответа в res
 // Точка входа "Список персонажей", 
 app.use('/api/chars', (req, res) => {
-  let result = data; // нужна функция для чтения data из базы, сейчас возвращает из кода
+  let result = getAllCharacters(); // нужна функция для чтения data из базы, сейчас возвращает из кода
 
   res
     .status(200) // Отвечаем статусом HTTP 200 OK (успешно)
