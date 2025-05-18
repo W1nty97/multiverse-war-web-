@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { getAllCharacters } from './dbAPI.js'; // Импортируем функцию getAllCharacters из db.js
+import { loginUser, getAllCharacters } from './dbAPI.js'; // Импортируем функцию getAllCharacters из db.js
 
 const app = express();
 app.use(cors());
@@ -21,7 +21,7 @@ app.use('/api/chars', (req, res) => {
 // Точка входа Логин
 app.use('/api/login', (req, res) => {
   let { login, password } = req.json();
-  let userId = checkLogin(login, password); // нужна функция checkLogin, которая проверит, что логин есть в базе и пароль правильный
+  let userId = loginUser(login, password); // Вызываем функцию логина из API
 
   if (userId) {
     res.status(200).json({ userId });
@@ -33,8 +33,7 @@ app.use('/api/login', (req, res) => {
 // Точка входа Регистрация
 app.use('/api/register', (req, res) => {
   let { login, password } = req.json();
-  let userId = registerLogin(login, password); // нужна функция registerLogin, которая проверит, 
-                                               // что логина ещё нет, и запишет новый логин с паролем
+  let userId = registerLogin(login, password); 
 
   if (userId) {
     res.status(200).json({ userId });

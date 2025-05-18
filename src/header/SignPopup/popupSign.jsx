@@ -4,7 +4,7 @@ import LoginInputSign from "./loginInputSign/loginInputSign.jsx";
 import PassInputSign from "./passInputSign/passInputSign.jsx";
 import BtnRegisterOpen from "./btnRegisterOpen.jsx";
 import SignInBtn from "./SignInBtn/signInBtn.jsx";
-import { loginUser } from "../../server/dbAPI"; // Импортируем функцию loginUser из dbAPI.js
+import { loginUser } from "../usersAPI"; // Импортируем функцию loginUser из usersAPI.js
 
 const initState = {
   login: "", // логин

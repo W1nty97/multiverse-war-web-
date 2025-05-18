@@ -4,8 +4,11 @@ import LoginInputReg from "./loginInputReg/loginInputReg";
 import PassInputReg from "./passInputReg/passInputReg";
 import PassInputRegTwo from "./passInputReg/passInputRegTwo";
 import RegisterBtn from "./registerBtn/registerBtn";
-import { valid_login, valid_pass } from "../usersAPI";
-import { registerUser } from "../../server/dbAPI"; // Импортируем функцию registerUser из dbAPI.js
+import { valid_login, valid_pass, registerUser } from "../usersAPI";
+
+// Во фронтенде нельзя использовать dbAPI, база недоступна из фронта.
+// Поэтому надо слать запросы через userAPI
+// import { registerUser } from "../../server/dbAPI"; // Импортируем функцию registerUser из dbAPI.js
 
 const initState = {
   login: "", // логин
