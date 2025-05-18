@@ -5,6 +5,7 @@ import PassInputReg from "./passInputReg/passInputReg";
 import PassInputRegTwo from "./passInputReg/passInputRegTwo";
 import RegisterBtn from "./registerBtn/registerBtn";
 import { valid_login, valid_pass } from "../usersAPI";
+import { registerUser } from "../../server/dbAPI"; // Импортируем функцию registerUser из dbAPI.js
 
 const initState = {
   login: "", // логин
@@ -86,8 +87,12 @@ export default function RegistrationForm({ visibilityReg, setVisibilityReg }) {
 
   // Обработчик нажатия кнопки Register
   function handleRegisterClicked() {
-    hideForm(); // закрываем форму
-    // здесь нужно добавить код регистрации пользователя
+    if (registerUser(state.login, state.pass)) {
+      alert("Пользователь зарегистрирован");
+      hideForm(); // закрываем форму
+    } else {
+      alert("Пользователь с таким логином уже существует");
+    }
   }
 
   return (

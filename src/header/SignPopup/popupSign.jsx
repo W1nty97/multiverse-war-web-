@@ -4,6 +4,7 @@ import LoginInputSign from "./loginInputSign/loginInputSign.jsx";
 import PassInputSign from "./passInputSign/passInputSign.jsx";
 import BtnRegisterOpen from "./btnRegisterOpen.jsx";
 import SignInBtn from "./SignInBtn/signInBtn.jsx";
+import { loginUser } from "../../server/dbAPI"; // Импортируем функцию loginUser из dbAPI.js
 
 const initState = {
   login: "", // логин
@@ -73,6 +74,14 @@ export default function PopupSign({
     hideSignForm(); // скрываем форму входа
     showRegForm(); // открываем форму регистрации
   }
+  function handleSignInClicked() {
+    if (loginUser(state.login, state.pass)) {
+      alert("Успешный вход");
+      setVisibilitySign("hidden");
+    } else {
+      alert("Ошибка входа");
+    }
+  }
 
   return (
     <>
@@ -98,7 +107,7 @@ export default function PopupSign({
             <LoginInputSign state={state} handler={handleLoginInput} />
             <PassInputSign state={state} handler={handlePassInput} />
             <BtnRegisterOpen handler={handleRegisterOpenClicked} />
-            <SignInBtn state={state} handler={hideSignForm} />
+            <SignInBtn state={state} handler={handleSignInClicked} />
           </div>
         </div>
       </div>

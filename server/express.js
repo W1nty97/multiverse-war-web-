@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 // Каждая точка получает данные запроса в req, а данные ответа в res
 // Точка входа "Список персонажей", 
 app.use('/api/chars', (req, res) => {
-  let result = getAllCharacters(); // нужна функция для чтения data из базы, сейчас возвращает из кода
+  let characters = getAllCharacters(); // нужна функция для чтения data из базы, сейчас возвращает из кода
 
   res
     .status(200) // Отвечаем статусом HTTP 200 OK (успешно)
-    .json(result); // И шлём данные в формате json
+    .json(characters); // И шлём данные в формате json
 });
 
 // Точка входа Логин

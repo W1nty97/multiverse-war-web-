@@ -7,7 +7,7 @@ export default function RegisterBtn({ state, handler }) {
     <>
       <div className="register__popup-box">
         <button className="verification" disabled={disabled} onClick={handler}>
-          Register
+          Зарегистрироваться
         </button> 
       </div>
     </>

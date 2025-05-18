@@ -1,5 +1,5 @@
 import { Pool } from "pg";
-import { dbConfig } from "../credentials.js"
+import { dbConfig } from "../credentials.js";
 
 const pool = new Pool(dbConfig);
 
@@ -8,11 +8,50 @@ pool.on("error", (err, client) => {
   process.exit(-1);
 });
 
-const getAllUsers = async () => {
+const checkLogin = async (login) => {
   const client = await pool.connect();
   try {
-    const res = await client.query("SELECT * FROM users");
-    return res.rows;
+    const res = await client.query(
+      "INSERT INTO users (login, password) VALUES ($1, $2) RETURNING id",
+      [login, password]
+    );
+    return res.rows[0].id;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  } finally {
+    client.release();
+  }
+};
+
+const registerUser = async (login, password) => {
+  const client = await pool.connect();
+  if (checkLogin(login) === true) {
+    return false;
+  } else {
+    try {
+      const res = await client.query(
+        "INSERT INTO users (login, password) VALUES ($1, $2) RETURNING id",
+        [login, password]
+      );
+      return res.rows[0].id;
+    } catch (err) {
+      console.error(err);
+      throw err;
+    } finally {
+      client.release();
+    }
+  }
+};
+
+const loginUser = async (login, password) => {
+  const client = await pool.connect();
+  try {
+    const res = await client.query(
+      "SELECT * FROM users WHERE login = $1 AND password = $2",
+      [login, password]
+    );
+    return res.rows.length > 0;
   } catch (err) {
     console.error(err);
     throw err;
@@ -27,7 +66,6 @@ export const getAllCharacters = async () => {
     const res =
       await client.query(`SELECT characters.id,name,version,element,type,rarity,strength,health,speed,mind,img, classes.class_name FROM characters 
         JOIN classes ON classes.id = characters.class_id`);
-    console.log(res.rows);
     return res.rows;
   } catch (err) {
     console.error(err);
