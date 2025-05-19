@@ -36,7 +36,7 @@ function reducer(
       };
     }
     default: {
-      // фиг знает за событие
+      // фиг знает что за событие
       return state; // поэтому не меняем состояние
     }
   }
@@ -67,15 +67,18 @@ export default function PopupSign({
   }
 
   function handlePassInput(e) {
-    dispatch({ type: "passChanged", value: e.target.value });
+    dispatch({ 
+      type: "passChanged", 
+      value: e.target.value 
+    });
   }
 
   function handleRegisterOpenClicked() {
     hideSignForm(); // скрываем форму входа
     showRegForm(); // открываем форму регистрации
   }
-  function handleSignInClicked() {
-    if (loginUser(state.login, state.pass)) {
+  async function handleSignInClicked() {
+    if (await loginUser(state.login, state.pass)) {
       alert("Успешный вход");
       setVisibilitySign("hidden");
     } else {

@@ -11,10 +11,10 @@ pool.on("error", (err, client) => {
 const checkLogin = async (login) => {
   const client = await pool.connect();
   try {
-    const res = await client.query("SELECT id FROM users WHERE login = $1", [
-      login,
-    ]);
-    return res.rows[0].id;
+    const res = await client.query(
+      "SELECT id FROM users WHERE login = $1", 
+      [login]);
+    return (res.rows.length > 0);
   } catch (err) {
     console.error(err);
     throw err;
@@ -25,8 +25,7 @@ const checkLogin = async (login) => {
 
 export const registerUser = async (login, password) => {
   const client = await pool.connect();
-  if (checkLogin(login)) {
-    // === true необязательно
+  if (await checkLogin(login)) {
     return false;
   } else {
     try {

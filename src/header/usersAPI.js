@@ -1,4 +1,4 @@
-import { Axios } from "axios";
+import axios from "axios";
 
 export function valid_login(login) {
   return (
@@ -19,24 +19,38 @@ export function valid_pass(pass) {
 // Т.к. мы не можем подключить на фронте dbAPI, мы сделаем здесь такие же функции, что и там,
 // но они будут передавать запрос на сервер, т.е. на бэкенд.
 export async function loginUser(login, pass) {
-  return await new Axios()
+  return await axios
     .post( // Отправляем HTTP запрос POST
       "http://localhost:9000/api/login", // В точку бэкенда "Логин"
-      { login, pass }) // Параметры в теле (content) запроса
+      { login: login, pass: pass }) // Параметры в теле (content) запроса
     .catch((error) => { // Если ошибка (HTTP status > 2xx), то
       console.log(error.toJSON()); // Увидим в браузере в консоли
       return false; // Вернем из фунции false
     })
-    .then((_) => true); // Вернем из фунции true
+    .then((res) => {
+      switch (res.status) { // Проверяем статус ответа
+        case 200: return true; // HTTP 200 OK это хорошо
+        default:
+          console.log(res.status); // Остальные выводим в лог
+      }
+      return false;
+    });
   }
 export async function registerUser(login, pass) {
-  return await new Axios()
+  return await axios
     .post( // Отправляем HTTP запрос POST
       "http://localhost:9000/api/register", // Точка бэкенда "Регистрация"
-      { login, pass }) // Параметры в теле (content) запроса
+      { login: login, pass: pass }) // Параметры в теле (content) запроса
     .catch((error) => { // Если ошибка (HTTP status > 2xx), то
       console.log(error.toJSON()); // Увидим в браузере в консоли
       return false; // Вернем из фунции false
     })
-    .then((_) => true); // Вернем из фунции true
+    .then((res) => {
+      switch (res.status) { // Проверяем статус ответа
+        case 200: return true; // HTTP 200 OK это хорошо
+        default:
+          console.log(res.status); // Остальные выводим в лог
+      }
+      return false;
+    });
 }

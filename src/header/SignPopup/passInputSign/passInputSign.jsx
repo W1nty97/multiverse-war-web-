@@ -1,6 +1,6 @@
 import "../../inputs.css";
 
-export default function PassInput(state, handler) {
+export default function PassInput({ state, handler }) {
 
   return (
     <>
