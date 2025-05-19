@@ -11,12 +11,9 @@ pool.on("error", (err, client) => {
 const checkLogin = async (login) => {
   const client = await pool.connect();
   try {
-    const res = await client.query(
-      "INSERT INTO users (login, password) VALUES ($1, $2) RETURNING id", 
-      // BUG! Запрос вставляет новый логин зачем-то
-      // Нужен SELECT, который проверит, что такой login есть в системе
-      [login, password] // Упадет здесь, password === undefined
-    );
+    const res = await client.query("SELECT id FROM users WHERE login = $1", [
+      login,
+    ]);
     return res.rows[0].id;
   } catch (err) {
     console.error(err);
@@ -28,7 +25,8 @@ const checkLogin = async (login) => {
 
 export const registerUser = async (login, password) => {
   const client = await pool.connect();
-  if (checkLogin(login)) { // === true необязательно
+  if (checkLogin(login)) {
+    // === true необязательно
     return false;
   } else {
     try {

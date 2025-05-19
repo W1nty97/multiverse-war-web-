@@ -20,10 +20,11 @@ root.render(
   <React.StrictMode>
     <Context.Provider
       value={{
-        data: data.sort((a, b) => rareness[a.rare] - rareness[b.rare]),
+        data: data.sort((a, b) => rareness[a.rarity] - rareness[b.rarity]),
         rareness: rareness,
       }}
     >
+      
       <App />
     </Context.Provider>
   </React.StrictMode>

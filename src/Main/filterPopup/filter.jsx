@@ -34,7 +34,7 @@ export function filterData(filter, data) {
     data = data.filter((e) => e.type === filter.kind);
   }
   if (filter.rare.length !== 0) {
-    data = data.filter((e) => filter.rare.includes(e.rare));
+    data = data.filter((e) => filter.rare.includes(e.rarity));
   }
   return data;
 }

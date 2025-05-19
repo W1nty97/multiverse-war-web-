@@ -4,7 +4,7 @@ INSERT INTO classes (id, class_name) VALUES
   ('rare','card-class-rare'),
   ('epic','card-class-epic'),
   ('legend','card-class-legend');
-INSERT INTO "characters" ("name","version","element","type",rarity,strength,health,speed,mind,class_id,img) VALUES
+INSERT INTO "characters" ("name","version","element","type","rarity",strength,health,speed,mind,"class_id",img) VALUES
   ('Ермак','Рестлер','Души','Воин','Редкая',85,60,75,17,'rare','./imgData/ermacBoxer.png'),
   ('W1nty','Полный потенциал','Абсолют','Божество','Мифическая',99,99,99,99,'mythic','./imgData/w1ntFull.png'),
   ('Саб-Зиро','Ледниковый период','Лёд, Снег','Воин','Эпическая',95,32,25,40,'epic','./imgData/sub-zeroAgo.png'),
@@ -59,3 +59,6 @@ INSERT INTO "characters" ("name","version","element","type",rarity,strength,heal
   ('Ермак','Зомби','Души','Нежить','Обычная',37,70,10,9,'cammon','./imgData/ermacZombie.png'),
   ('Ермак','Нано-шаман','Души','Кибер','Эпическая',52,90,75,35,'epic','./imgData/ermacCyber.png'),
   ('Ермак','Симбиот','Души','Нежить','Эпическая',92,89,75,15,'epic','./imgData/ermacVenom.png');
+INSERT INTO "characters" ("name","version","element","type",rarity,strength,health,speed,mind,class_id,img) VALUES
+  ('Кенши','Потомок почётной семьи','Теликинез','Воин','Редкая',83,57,79,50,'rare','./imgData/kenshiClassic.png'),
+  ('Кенши','Тарката','Теликинез','Воин','Легендарная',97,30,70,25,'legend','./imgData/kenshiTarkata.png')

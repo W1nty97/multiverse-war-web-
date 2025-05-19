@@ -3,7 +3,7 @@ import "./card.css";
 export default function Card({ element }) {
   return (
     <>
-      <div className={element.class}>
+      <div className={element.class_name}>
         <div className="card__box-img">
           <img src={element.img} className="card-img" alt="character" />
         </div>
@@ -12,9 +12,9 @@ export default function Card({ element }) {
           <h4 className="card-version">{element.version}</h4>
         </div>
         <div className="card__box-text">
-          <p className="card-type">Редкость: {element.rare}</p>
+          <p className="card-rarity">Редкость: {element.rarity}</p>
           <p className="card-elem">Способность: {element.element}</p>
-          <p className="card-rare">Класс: {element.type}</p>
+          <p className="card-type">Класс: {element.type}</p>
         </div>
         <div className="card__box-indicators">
           <div className="card-indicator" id="strength">
