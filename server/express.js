@@ -10,8 +10,8 @@ app.use(bodyParser.json());
 // *** Точки входа (endpoints) нашего бэкенда ака сервера.
 // Каждая точка получает данные запроса в req, а данные ответа в res
 // Точка входа "Список персонажей", 
-app.use('/api/chars', (req, res) => {
-  let characters = getAllCharacters(); // нужна функция для чтения data из базы, сейчас возвращает из кода
+app.use('/api/chars', async (req, res) => {
+  let characters = await getAllCharacters(); // нужна функция для чтения data из базы, сейчас возвращает из кода
 
   res
     .status(200) // Отвечаем статусом HTTP 200 OK (успешно)
@@ -19,9 +19,9 @@ app.use('/api/chars', (req, res) => {
 });
 
 // Точка входа Логин
-app.use('/api/login', (req, res) => {
+app.use('/api/login', async (req, res) => {
   let { login, password } = req.json();
-  let userId = loginUser(login, password); // Вызываем функцию логина из API
+  let userId = await loginUser(login, password); // Вызываем функцию логина из API
 
   if (userId) {
     res.status(200).json({ userId });
@@ -31,9 +31,9 @@ app.use('/api/login', (req, res) => {
 });
 
 // Точка входа Регистрация
-app.use('/api/register', (req, res) => {
+app.use('/api/register', async (req, res) => {
   let { login, password } = req.json();
-  let userId = registerLogin(login, password); 
+  let userId = await registerLogin(login, password); 
 
   if (userId) {
     res.status(200).json({ userId });
