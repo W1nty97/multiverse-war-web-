@@ -6,7 +6,7 @@
   align-items: center;
 }
 .verification:disabled {
-  width: 20%;
+  width: 40%;
   height: 40%;
   color: #6d0000e8;
   text-align: center;
@@ -25,7 +25,7 @@
   font-size: 130%;
 }
 .verification {
-  width: 20%;
+  width: 40%;
   height: 40%;
   color: #007100;
   text-align: center;

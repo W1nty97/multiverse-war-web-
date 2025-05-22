@@ -1,6 +1,7 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import cors from 'cors';
-import { loginUser, registerUser, getAllCharacters } from './dbAPI.js'; // Импортируем функцию getAllCharacters из db.js
+import { loginUser, getAllCharacters } from './dbAPI.js'; // Импортируем функцию getAllCharacters из db.js
 
 const app = express();
 app.use(cors());
@@ -9,8 +10,8 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 // *** Точки входа (endpoints) нашего бэкенда ака сервера.
 // Каждая точка получает данные запроса в req, а данные ответа в res
-// Точка входа "Список персонажей", 
-app.use('/api/chars', async (req, res) => {
+// Точка входа "Список персонажей",
+app.use("/api/chars", async (req, res) => {
   let characters = await getAllCharacters(); // нужна функция для чтения data из базы, сейчас возвращает из кода
 
   res
@@ -20,27 +21,29 @@ app.use('/api/chars', async (req, res) => {
 
 // Точка входа Логин
 app.use('/api/login', async (req, res) => {
-  let { login, pass } = req.body;
-  let success = await loginUser(login, pass); // Вызываем функцию логина из API
-  if (success) {
-    res.status(200).send();
+  let { login, password } = req.json();
+  let userId = await loginUser(login, password); // Вызываем функцию логина из API
+
+  if (userId) {
+    res.status(200).json({ userId });
   } else {
     res.status(403).send();
   }
 });
 
 // Точка входа Регистрация
-app.use('/api/register', async(req, res) => {
-  let { login, pass } = req.body;
-  let success = await registerUser(login, pass); 
-  if (success) {
-    res.status(200).send();
+app.use('/api/register', async (req, res) => {
+  let { login, password } = req.json();
+  let userId = await registerLogin(login, password); 
+
+  if (userId) {
+    res.status(200).json({ userId });
   } else {
     res.status(403).send();
   }
 });
 
 // Запускаем сервер на порту 9000
-app.listen('9000', () => {
-    console.log('Express server started at <http://localhost:9000>');
+app.listen("9000", () => {
+  console.log("Express server started at <http://localhost:9000>");
 });
